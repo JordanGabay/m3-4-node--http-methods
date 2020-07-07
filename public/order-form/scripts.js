@@ -5,11 +5,10 @@ const orderItems = {
   socks: { label: 'Socks', imgUrl: './assets/socks.jpg' },
 };
 const errorMessages = {
-  unavailable: 'Item out of stock. :(',
-  'repeat-customer':
-    'Exiting user. Not allowed to place another order at the moment.',
-  undeliverable: 'Outside of delivery zone. :(',
-  'missing-data': "Oops! Looks like we're missing some information.",
+  unavailable:       'Item out of stock. :(',
+  'repeat-customer':'Exiting user. Not allowed to place another order at the moment.',
+  undeliverable: '    Outside of delivery zone. :(',
+  'missing-data': "   Oops! Looks like we're missing some information.",
 };
 const submitButton = document.getElementById('confirm-button');
 const order = document.getElementById('order');
@@ -40,7 +39,7 @@ const handleToggleErrorMessage = (errorStatus) => {};
 
 const handleSubmit = (event) => {
   event.preventDefault();
-  console.log(size.value);
+  // console.log(size.value);
   submitButton.disabled = true;
 
   const data = {
@@ -56,7 +55,7 @@ const handleSubmit = (event) => {
     country: country.value,
   };
 
-  console.log(email)
+  // console.log(email)
 
   fetch('/order', {
     method: 'POST',
