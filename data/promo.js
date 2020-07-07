@@ -24,7 +24,7 @@ const customers = [
     givenName: 'John',
     surname: 'Doe',
     email: 'some@amnesia.net',
-    address: '',
+    address: '123 Main Street',
     city: 'Vancouver',
     province: 'British Columbia',
     postcode: 'M5C 2E4',
