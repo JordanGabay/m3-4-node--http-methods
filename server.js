@@ -22,7 +22,9 @@ express()
 
 
   .get('/order-confirmed', (req, res) => {
-    res.sendFile(__dirname + "/public/order-confirmed.html")
+    // res.sendFile(__dirname + "/public/order-confirmed.html", {title: "HELLO"})
+    const { name, product, province } = req.query
+    res.render('pages/order-confirmed', { name, product, province})
   })
 
   // endpoints
@@ -31,10 +33,11 @@ express()
     const info = req.body
     // console.log(info)
     const isValid= validate(info)
+    const { givenName, order, province } = info
+    const { status, error } = isValid
+    res.send({status, error, givenName, order, province})
     // console.log(validated)
    
-    console.log(isValid)
-    res.send(isValid)
     
 
   })
